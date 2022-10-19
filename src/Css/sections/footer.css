@@ -1,0 +1,30 @@
+footer {
+    background-color: var(--color-grey-110);
+    border: 1px solid var(--border-color-2);
+    color: var(--color-grey-10);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-regular);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+    margin-top: 70px;
+}
+
+    footer .socialmedia {
+        margin-bottom: 25px;
+    }
+
+        footer .socialmedia a {
+            color: var(--color-dark-10);
+            font-size: var(--font-size-18);
+            margin-left: 10px;
+            margin-right: 10px;
+            transition: all 0.1s ease-in-out;
+        }
+
+            footer .socialmedia a:hover {
+                color: var(--color-red);
+            }
