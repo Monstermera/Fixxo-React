@@ -1,16 +1,27 @@
-import React from 'react'
-import FooterSection from '../sections/FooterSection'
-import MainMenuSection from '../sections/MainMenuSection'
+import React, { useContext } from 'react'
+import { useParams } from 'react-router-dom'
+import Breadcrumb from '../sections/Breadcrumb'
+import Footer from '../sections/Footer'
+import MainMenu from '../sections/MainMenu'
+import ProductGrid from '../sections/ProductGrid'
+import { ProductContext } from '../context/contexts'
 
-const ProductsView = () => {
-  window.top.document.title = 'Products | Fixxo.'
+const ProductsDetailsView = () => {
+  const productContext = useContext(ProductContext)
 
+  const params = useParams ()
   return (
-    <>
-      <MainMenuSection />
-      <FooterSection />
+    <> 
+      <MainMenu />
+        <div className="container mt-5">
+          <h1>{params.name}</h1>
+        </div>
+
+      <Breadcrumb  currentPage="Products" />
+      <ProductGrid title="Products" products={productContext} />
+      <Footer />
     </>
   )
 }
 
-export default ProductsView
+export default ProductsDetailsView

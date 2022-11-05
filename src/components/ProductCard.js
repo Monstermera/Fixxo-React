@@ -17,13 +17,13 @@ const ProductCard = ({product}) => {
     <div className="col">
         <div className="card">
             <div className="card-img">
-                <img src={product.img} alt={product.name} />
+                <img src={product.imageName} alt={product.name} />
                 <div className="card-menu d-xl-none">
                     <button onClick={addToWishList} className="menu-link"><i className="fa-regular fa-heart"></i></button>
                     <button onClick={addToCompare} className="menu-link"><i className="fa-regular fa-code-compare"></i></button>
                     <button onClick={addToCart} className="menu-link"><i className="fa-light fa-bag-shopping"></i></button>
                 </div>
-               <NavLink to={`/products/${product.name.toLowerCase().replace(/ /gi, "-")}`} className="btn-theme d-xl-none">QUICK VIEW</NavLink>
+               <NavLink to={`/products/${product.articleNumber}`} className="btn-theme d-xl-none">QUICK VIEW</NavLink>
             </div>
             <div className="card-body">
                 <p className="card-text">{product.text}</p>

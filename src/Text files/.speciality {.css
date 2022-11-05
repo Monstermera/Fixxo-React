@@ -1,0 +1,61 @@
+.speciality {
+    background-color: var(--color-grey-90); 
+    height: 406px; 
+    padding: 100px 20px 65px 40px;  
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .speciality h1 {
+        margin-bottom: 30px;
+    }
+
+    .speciality .speciality-flex {
+        flex-direction: row;
+        display: flex;
+        align-items: center;  
+        justify-content: center;
+    }
+
+        .speciality .speciality-flex .flex-left {
+            width: 245px;  
+            height: 232px;       
+            background-color: var(--color-white);
+            display: flex;
+            flex-direction: column;
+            text-align: start;
+            align-items: flex-start;
+            padding: 70px 0 0 33px;
+        }
+
+            .speciality .speciality-flex .flex-left h5 {
+                font-size: var(--font-size-20);
+                font-weight: var(--font-weight-semibold);
+                color: var(--color-dark-10);
+                margin-bottom: 30px;
+            }
+
+            .speciality .speciality-flex .flex-left a {
+                font-size: var(--font-size-16);
+                font-weight: var(--font-weight-semibold);
+                color: var(--color-dark-20);
+                text-decoration: none;
+                border-bottom: 1px solid black;
+                width: 55%;            
+        }
+
+            .speciality .speciality-flex .flex-left i {
+                margin-left: 5px;
+                font-size: 13px;
+            }
+        
+        .speciality .speciality-flex .flex-right {
+            padding-right: 20px; 
+        }
+
+            .speciality .speciality-flex .flex-right img {
+                width: 245px;
+                height: 232px;
+            }

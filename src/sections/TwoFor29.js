@@ -1,23 +1,22 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 
-const TwoForUsdLeft = ({products}) => {
+const TwoForUsdLeft = ({products = []}) => {
   return (
     <section className="flashsales container">
+         
         <div className="flashsales-box">
             <div className="flashsales-body">
                 <h1>2 FOR USD $29</h1>
-                <NavLink>
                     <button className="btn-white">FLASH SALE</button>
-                </NavLink>
             </div>
         </div>
-       
-        <div className="row row-cols-1 row-cols-md-2 g-4" style={{"width": "70%"}}>
+       <div className="image-box-1"> 
+        <div className="row row-cols-1 row-cols-md-1 row-cols-lg-2 g-4">
             {
-                products.map(product => <ProductCard key={product.id} product={product} />)
+                products.map(product => <ProductCard key={product.articleNumber} product={product} />)
             }      
+        </div>
         </div>
     </section>
   )

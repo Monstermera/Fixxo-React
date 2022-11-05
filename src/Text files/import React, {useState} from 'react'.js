@@ -11,12 +11,17 @@ const ContactFormSection = () => {
 
         if(!values.name)
             errors.name = "You must enter a name"
+        else if(values.name.length < 2 )
+            errors.name = "Your name must be atleast two characters"
 
+
+            
         if(!values.email)
             errors.email = "You must enter an email address"
         else if(!regex_email.test(values.email))
             errors.email = "You must enter a valid email address"
 
+    
         if(!values.comment)
             errors.comment = "You must enter a comment"
         else if(values.comment.length < 5)
@@ -30,6 +35,11 @@ const ContactFormSection = () => {
         return errors;
     }
 
+    const handleKeyUp = (e) => {
+        e.preventDefault()
+        setFormErrors(validate(contactForm))
+    }
+
     const handleChange = (e) => {
         const {id, value} = e.target
         setContactForm({...contactForm, [id]: value}) 
@@ -40,6 +50,8 @@ const ContactFormSection = () => {
         setFormErrors(validate(contactForm))
     }
     
+
+
     return (
         <section className="contact-form">
             <div className="container">
@@ -54,16 +66,16 @@ const ContactFormSection = () => {
                             <h2>Come in Contact with Us</h2>
                             <form onSubmit={handleSubmit} noValidate>
                                 <div>
-                                    <input id="name" type="text" placeholder="Your name" value={contactForm.name} onChange={handleChange} />
+                                    <input id="name" type="text" placeholder="Your name" onKeyUp={handleKeyUp} value={contactForm.name} onChange={handleChange} />
                                     <div id="nameErrorMessage" className="errorMessage">{formErrors.name}</div>
                                 </div>
                                 <div>          
-                                    <input id="email" type="email" placeholder="Your Mail" value={contactForm.email} onChange={handleChange} />
+                                    <input id="email" type="email" placeholder="Your Mail" onKeyUp={handleKeyUp} value={contactForm.email} onChange={handleChange} />
                                     <div id="emailErrorMessage" className="errorMessage">{formErrors.email}</div>
                                 </div>
 
                                 <div className="textarea">
-                                    <textarea id="comment" placeholder="Comments" value={contactForm.comment} onChange={handleChange} ></textarea>
+                                    <textarea id="comment" placeholder="Comments" onKeyUp={handleKeyUp} value={contactForm.comment} onChange={handleChange} ></textarea>
                                     <div id="commentErrorMessage" className="errorMessage">{formErrors.comment}</div>
                                 </div>
                                     <button type="submit" className="btn-red">Post Comments</button>   
