@@ -8,17 +8,16 @@ import { ProductContext } from '../context/contexts'
 
 const ProductsDetailsView = () => {
   const productContext = useContext(ProductContext)
-
   const params = useParams ()
+  
   return (
     <> 
       <MainMenu />
-        <div className="container mt-5">
-          <h1>{params.name}</h1>
-        </div>
-
+      <div className="container mt-5">
+        <h1>{params.name}</h1>
+      </div>
       <Breadcrumb  currentPage="Products" />
-      <ProductGrid title="Products" products={productContext} />
+      <ProductGrid title="Products" items={productContext} />
       <Footer />
     </>
   )

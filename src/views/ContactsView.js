@@ -1,9 +1,9 @@
 import React from 'react'
 import Breadcrumb from '../sections/Breadcrumb'
 import Footer from '../sections/Footer'
-import ContactForm from '../sections/ContactForm'
+import ContactForm from '../sections/contact/ContactForm'
 import MainMenu from '../sections/MainMenu'
-import Map from '../sections/Map'
+import Map from '../sections/contact/Map'
 
 
 const ContactsView = () => {

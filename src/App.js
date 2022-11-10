@@ -11,7 +11,7 @@ import { FeaturedContext } from './context/contexts'
 import { FlashSaleContext } from './context/contexts'
 import { SelectedContext } from './context/contexts'
 import { RelatedContext } from './context/contexts'
-
+import { ShoppingCartProvider } from './context/ShoppingCartContext';
 
 function App() {
     const [products, setProducts] = useState ([])
@@ -56,6 +56,7 @@ function App() {
 
   return (
      <BrowserRouter>
+     <ShoppingCartProvider>
       <ProductContext.Provider value={products}>
       <FeaturedContext.Provider value={featuredProducts}>
       <FlashSaleContext.Provider value={flashSaleProducts}>
@@ -75,6 +76,7 @@ function App() {
       </FlashSaleContext.Provider>
       </FeaturedContext.Provider>
       </ProductContext.Provider>
+      </ShoppingCartProvider>
     </BrowserRouter>
     
 

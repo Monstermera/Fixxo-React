@@ -1,22 +1,13 @@
 import React from 'react'
-import Footer from '../sections/Footer'
-import MainMenu from '../sections/MainMenu'
-
-
+import background from '../assets/images/page-not-found.jpg';
 
 const NotFoundView = () => {
   return (
-    <>
-      <MainMenu />
-      <div className="container d-flex justify-content-center align-items-center">
-        <h1>404 - Page Not Found</h1>
-      </div>
-
-      <div style={{ position: "fixed", bottom: "0"}}>
-          <Footer />
-      </div>
-    
-    </>
+    <div className="page-error">
+      <img className="error-img" src={background} alt="" />
+      <h1> <strong>404</strong> <br /> Page not found</h1>
+    </div>
+  
   )
 }
 
